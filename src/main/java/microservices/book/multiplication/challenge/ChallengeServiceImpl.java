@@ -1,5 +1,6 @@
 package microservices.book.multiplication.challenge;
 
+import microservices.book.multiplication.user.User;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -9,6 +10,6 @@ public class ChallengeServiceImpl implements ChallengeService {
         int result = resultAttempt.factorA() * resultAttempt.factorB();
         boolean isCorrect = result == resultAttempt.guess();
 
-        return new ChallengeAttempt(4554L,546L, resultAttempt.factorA(),resultAttempt.factorB(), resultAttempt.guess(), isCorrect);
+        return new ChallengeAttempt(4554L, new User(10L, "john"), resultAttempt.factorA(),resultAttempt.factorB(), resultAttempt.guess(), isCorrect);
     }
 }
